@@ -1,7 +1,10 @@
 {
   "development": {
-    "dialect": "sqlite",
-    "storage": "data/main.sqlite"
+    "username": "root",
+    "password": "rootroot",
+    "database": "flashcards",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
