@@ -2,7 +2,7 @@ const express = require("express");
 const { sequelize, Flashcard } = require("./models");
 
 const app = express();
-const port = 3068;
+const port = 3070;
 
 app.use(express.json());
 
