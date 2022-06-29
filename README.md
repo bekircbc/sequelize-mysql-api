@@ -1,67 +1,25 @@
-# import vs. require
+# config.json
 
-      add "type":"module" in package.json
-      import express from "express"
+            "development": {
+            "username": "root",
+            "password": "rootroot",
+             "database": "flashcard",
+             "host": "127.0.0.1",
+             "dialect": "mysql"
+            },
 
-      const express = require('express')
+# mysql
 
-- if you use sequelize, choose require instead of import.
+            sudo mysql -p
+            create database flaschcard
+            use flashcard
 
-# config.json in sequelize
+# postman
 
-      "development": {
-      "dialect": "sqlite",
-      "storage": "data/main.sqlite"
-      },
+            POST -- http://localhost:3070/flashcards
 
-# create Flaschcard model and migration
-
-      sequelize model:generate --name Flashcard --attributes category:string,front:string,back:string
-
-# add async-await and sequelize model to server.js
-
-      const { sequelize } = require("./models");
-
-      app.listen(port, async () => {
-      console.log(`Listening on http://localhost:${port}`);
-      await sequelize.sync();
-      });
-
-# create API routes in sever.js
-
-      const { sequelize, Flashcard } = require('./models');
-
-      app.use(express.json());
-
-      app.post('/flashcards', async (req, res) => {
-      const { category, front, back } = req.body;
-      try {
-        const flashcard = await Flashcard.create({ category, front, back });
-        return res.json(flashcard);
-      } catch (err) {
-        console.log(err);
-        return res.status(500);
-      }
-      });
-
-      ## test in Postman
-
-      POST -- http://localhost:PORT/flashcards
-
-        {
+                    {
           "category":"vim",
           "front":"duploicate line",
           "back":"yyp"
         }
-
-# getting flashcards
-
-      app.get('/flashcards', async (req, res) => {
-      try {
-        const flashcards = await Flashcard.findAll();
-        return res.json(flashcards);
-        } catch (err) {
-        console.log(err);
-        return res.status(500);
-        }
-        });
