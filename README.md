@@ -13,6 +13,7 @@
             sudo mysql -p
             create database flaschcard
             use flashcard
+            select * from Flashcards
 
 # postman
 
@@ -22,4 +23,10 @@
           "category":"vim",
           "front":"duploicate line",
           "back":"yyp"
+        }
+
+                {
+          "category":"git",
+          "front":"hold the line",
+          "back":"git log -1"
         }
