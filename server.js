@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.send(`<h1>Flaschcard API</h1>`);
+  res.send(`<h1>Flashcard API</h1>`);
 });
 
 app.post("/flashcards", async (req, res) => {

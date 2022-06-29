@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "rootroot",
-    "database": "flashcard",
+    "database": "Flashcards",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
