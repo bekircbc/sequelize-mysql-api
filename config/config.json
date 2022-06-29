@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "webuser",
-    "password": "passpass",
-    "database": "Flashcard",
+    "username": "root",
+    "password": "rootroot",
+    "database": "flashcard",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
